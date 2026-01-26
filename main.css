@@ -1,0 +1,217 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: 'PublicPixel', sans-serif;
+}
+
+@font-face {
+    font-family: 'PublicPixel';
+    src: url('./fonts/PublicPixel-rv0pA.ttf') format('truetype');
+}
+
+html {
+    scrollbar-width: thin;
+}
+
+body {
+    background: #000000;
+    color: white;
+    margin: 0;
+
+    height: 100vh;
+}
+
+
+
+.stars-bg {
+    opacity: 0;
+    position: absolute;
+
+    width: 100%;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+
+    & #Layer7 {
+        /*  opacity: 0; */
+    }
+}
+
+.satellite-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#Layer1 {
+    @starting-style {
+        opacity: 1s;
+    }
+
+    opacity: 1;
+
+    animation-name: fadeInOut;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+svg {
+    z-index: -10;
+}
+
+svg * {
+    stroke: none;
+}
+
+.app {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.hero {
+    /*  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 20%, rgb(29, 29, 29) 100%); */
+    height: 10%;
+    display: block;
+
+    padding-bottom: 10%;
+}
+
+.title {
+    text-align: center;
+    margin-top: 10%;
+
+    font-size: 200%;
+}
+
+.mountain-bg {
+
+    width: 100%;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+
+
+}
+
+.hero-mountain-container {
+    width: 100%;
+    /* Or set to specific pixel width */
+    position: relative;
+    display: block;
+
+    mask-image: linear-gradient(to bottom,
+            white 0%,
+            transparent 50%);
+    -webkit-mask-image: linear-gradient(to bottom,
+            white 0%,
+            transparent 100%)
+}
+
+.sections {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex-wrap: nowrap;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+.sections>.section {
+    color: #ffffff;
+    background-color: rgba(31, 31, 31, 0.301);
+    display: block;
+
+    width: 90%;
+    height: max-content;
+
+    padding-left: 3%;
+}
+
+.work-showcase {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    gap: 15px;
+}
+
+
+.work-showcase .card {
+    background-color: #000000;
+    display: block;
+
+    text-decoration: none;
+    color: white;
+
+    height: 100%;
+    width: 20%;
+    min-width: 20%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+    overflow: hidden;
+
+    transition: all 0.5s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+}
+
+.work-showcase>.card img {
+    aspect-ratio: cover;
+    height: fit-content;
+    width: 100%;
+    
+}
+
+.work-showcase>.card h3 {
+    align-self: flex-start;
+}
+
+.work-showcase>.card p {
+    align-self: flex-start;
+    padding: 0;
+}
