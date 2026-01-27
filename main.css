@@ -118,7 +118,6 @@ svg * {
 
 .hero-mountain-container {
     width: 100%;
-    /* Or set to specific pixel width */
     position: relative;
     display: block;
 
@@ -174,7 +173,7 @@ svg * {
 
 .work-showcase .card {
     background-color: #000000;
-    display: block;
+    display: flex;
 
     text-decoration: none;
     color: white;
@@ -211,7 +210,23 @@ svg * {
     align-self: flex-start;
 }
 
-.work-showcase>.card p {
+.work-showcase>.card p, h3 {
     align-self: flex-start;
     padding: 0;
+}
+
+.footer {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.cp {
+    align-self: center;
+}
+
+.footer > .links {
+    align-self: center;
+    width: min-content;
 }
